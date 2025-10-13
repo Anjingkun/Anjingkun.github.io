@@ -134,7 +134,7 @@
 <body>
   <!-- self-intro -->
   <table
-    style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    style="width:100%;max-width:930px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -206,6 +206,9 @@
       <br>
       <!-- <td style="padding:0px;width:100%;vertical-align:middle"> -->
         <p>
+            <li>
+            [2025/09]🎉 <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench" target="_blank">RefSpatial-Bench</a> <em><b><span style="color: #FF0000;"> is used by Qwen3-VL and Gemini-Robotics-1.5</span></b></em> to evaluate spatial reasoning in complex scenes!
+          </li>
             <li>
             [2025/09]🎉 <a href="https://zhoues.github.io/RoboRefer/" target="_blank">RoboRefer</a> gets accepted to <a
               href="https://nips.cc/Conferences/2025" target="_blank">NeurIPS  2025</a>! See you in San Diego!
@@ -388,6 +391,67 @@
           <div class="one">
             <div class="two" id='malle_image'>
               <!-- <br> -->
+              <img src='images/publication_preview/ICRA26_TIGeR.png' width="325">
+            </div>
+            <!-- <br> -->
+            <img src='images/publication_preview/ICRA26_TIGeR.png' width="325">
+          </div>
+          <script type="text/javascript">
+            function malle_start() {
+              document.getElementById('malle_image').style.opacity = "1";
+            }
+            function malle_stop() {
+              document.getElementById('malle_image').style.opacity = "0";
+            }
+            malle_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:65%;vertical-align:middle">
+          <a href="https://hany01rye.github.io/TIGeR/" target="_blank">
+            <papertitle>TIGeR: Tool-Integrated Geometric Reasoning in Vision-Language Models for Robotics
+            </papertitle>
+          </a>
+          <br>
+          <spacer></spacer>
+            <a class="a2" href="https://github.com/hany01rye" target="_blank">Yi Han *</a>,
+            <a class="a2" href="https://chicheng123.github.io/" target="_blank">Cheng Chi *<sup>‡</sup></a>,
+          <a class="a2" href="https://zhoues.github.io/" target="_blank">Enshen Zhou *</a>,
+            <a class="a2" href="https://rainfallsdown.github.io/" target="_blank">Shanyu Rong</a>,
+          <a:focus><b>Jingkun An *</b></a:focus>,
+
+          <a class="a2" href="https://scholar.google.com/citations?user=2xR6P5AAAAAJ" target="_blank">Pengwei Wang</a>,
+          <a class="a2" href="https://scholar.google.com/citations?user=4XVJrRAAAAAJ" target="_blank">Zhongyuan Wang</a>,
+          <a class="a2" href="https://lucassheng.github.io/" target="_blank">Lu Sheng<sup>†</sup></a>,
+          <a class="a2" href="https://www.shanghangzhang.com/" target="_blank">Shanghang Zhang<sup>†</sup></a>
+          <br>
+          <spacer></spacer>
+          <a class="a1" href="https://arxiv.org/pdf/2510.07181">Paper</a> /
+          <a class="a1" href="https://hany01rye.github.io/TIGeR/">Project</a> /
+          <a class="a1" href="https://github.com/hany01rye/tiger">Code</a> /
+
+          <a class="a1">
+            <span class="copy-text" data-bibtex="
+@misc{2510.07181,
+  Author = {Yi Han and Cheng Chi and Enshen Zhou and Shanyu Rong and Jingkun An and Pengwei Wang and Zhongyuan Wang and Lu Sheng and Shanghang Zhang},
+  Title = {TIGeR: Tool-Integrated Geometric Reasoning in Vision-Language Models for Robotics},
+  Year = {2025},
+  Eprint = {arXiv:2510.07181},
+}
+            " onclick="copyBibTeX(this)">Copy BibTeX</span>
+            <span class="copy-success">Copy Success!</span>
+          </a>
+          <spacer></spacer>
+          <em>TL;DR: Equipping VLMs for robotics!</em>
+          <br>
+          <spacer></spacer>
+          <em><b>Submitted to ICRA 2026</b></em>
+        </td>
+      </tr>
+      <tr onmouseout="malle_stop()" onmouseover="malle_start()">
+        <td style="padding:20px;width:40%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='malle_image'>
+              <!-- <br> -->
               <img src='images/publication_preview/aaai25_mcm.png' width="325">
             </div>
             <!-- <br> -->
@@ -403,7 +467,6 @@
             malle_stop()
           </script>
         </td>
-
         <td style="padding:20px;width:65%;vertical-align:middle">
           <a href="https://github.com/JeixHuang/MCM" target="_blank">
             <papertitle>Medical MLLM is Vulnerable: Cross-Modality Jailbreak and Mismatched Attacks on Medical Multimodal Large Language Models
