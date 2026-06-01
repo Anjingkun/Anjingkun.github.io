@@ -207,6 +207,9 @@
       <!-- <td style="padding:0px;width:100%;vertical-align:middle"> -->
         <p>
             <li>
+            [2026/06]🎉 Released <a href="https://anjingkun.github.io/SafeSteer/" target="_blank">SafeSteer</a>, a lightweight framework for safety alignment via localized on-policy distillation &mdash; <em><b><span style="color: #FF0000;">100 harmful samples, zero alignment tax</span></b></em>! Code available at <a href="https://github.com/Anjingkun/SafeSteer" target="_blank">GitHub</a>.
+          </li>
+            <li>
             [2025/09]🎉 <a href="https://huggingface.co/datasets/BAAI/RefSpatial-Bench" target="_blank">RefSpatial-Bench</a> <em><b><span style="color: #FF0000;"> is used by Qwen3-VL and Gemini-Robotics-1.5</span></b></em> to evaluate spatial reasoning in complex scenes!
           </li>
             <li>
@@ -316,6 +319,61 @@
           <br>
           <spacer></spacer>
           <em><b>NeurIPS 2025</b></em>
+        </td>
+      </tr>
+
+      <!-- SafeSteer -->
+      <tr onmouseout="malle_stop()" onmouseover="malle_start()" bgcolor="#ffffdc">
+        <td style="padding:20px;width:40%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='malle_image'>
+              <img src='images/publication_preview/emnlp26_safesteer.png' width="325">
+            </div>
+            <img src='images/publication_preview/emnlp26_safesteer.png' width="325">
+          </div>
+          <script type="text/javascript">
+            function malle_start() {
+              document.getElementById('malle_image').style.opacity = "1";
+            }
+            function malle_stop() {
+              document.getElementById('malle_image').style.opacity = "0";
+            }
+            malle_stop()
+          </script>
+        </td>
+
+        <td style="padding:20px;width:65%;vertical-align:middle">
+          <a href="https://anjingkun.github.io/SafeSteer/" target="_blank">
+            <papertitle>SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment
+            </papertitle>
+          </a>
+          <br>
+          <spacer></spacer>
+          <a class="a2" href="https://llleoli.github.io/" target="_blank">Hao Li *</a>,
+          <a:focus><b>Jingkun An *</b></a:focus>,
+          <a class="a2" href="https://openreview.net/profile?id=~Zijun_Song1" target="_blank">Zijun Song *</a>,
+          <a class="a2" href="https://scholar.google.com.hk/citations?user=_pbn-KoAAAAJ&hl=zh-CN" target="_blank">Pengyu Zhu</a>,
+          <a class="a2" href="https://openreview.net/profile?id=~Rui_Li36" target="_blank">Rui Li</a>,
+          <a class="a2" href="https://scholar.google.com/citations?user=LfbCou8AAAAJ&hl=zh-CN&authuser=1" target="_blank">Hao Wang</a>,
+          <a class="a2" href="https://openreview.net/profile?id=~Wendi_Feng1" target="_blank">Wendi Feng</a>,
+          <a class="a2" href="https://zhizhou57.github.io/" target="_blank">Yesheng Liu</a>,
+          <a class="a2" href="https://adwardlee.github.io/" target="_blank">Lijun Li</a>,
+          <a class="a2" href="http://web.archive.org/web/20211021154403/https://www.microsoft.com/en-us/research/people/jinya/" target="_blank">Jin-Ge Yao</a>,
+          <a class="a2" href="https://shalei120.github.io/" target="_blank">Lei Sha<sup>†</sup></a>
+          <br>
+          <spacer></spacer>
+          <a class="a1" href="https://anjingkun.github.io/SafeSteer/">Project</a> /
+          <a class="a1" href="https://github.com/Anjingkun/SafeSteer">Code</a> /
+
+          <a class="a1">
+            <span class="copy-text" data-bibtex="TODO: BibTeX entry coming soon." onclick="copyBibTeX(this)">Copy BibTeX</span>
+            <span class="copy-success">Copy Success!</span>
+          </a>
+          <spacer></spacer>
+          <em>TL;DR: Sparse safety alignment via on-policy distillation on a tiny safety-token subset &mdash; only 100 harmful samples, no general data, no reward model.</em>
+          <br>
+          <spacer></spacer>
+          <em><b>Preprint</b></em>
         </td>
       </tr>
 

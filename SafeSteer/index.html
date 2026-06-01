@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+
+<body>
+    <!-- Title and Author -->
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment</h1>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a target="_blank" href="https://llleoli.github.io/">Hao&#160;Li</a><sup>1*</sup>,
+                                <a target="_blank" href="https://scholar.google.com/citations?user=gtoavQoAAAAJ">Jingkun&#160;An</a><sup>1*</sup>,
+                                <a target="_blank" href="https://openreview.net/profile?id=~Zijun_Song1">Zijun&#160;Song</a><sup>2*</sup>,
+                                <a target="_blank" href="https://scholar.google.com.hk/citations?user=_pbn-KoAAAAJ&hl=zh-CN">Pengyu&#160;Zhu</a><sup>3</sup>,
+                                <a target="_blank" href="https://openreview.net/profile?id=~Rui_Li36">Rui&#160;Li</a><sup>4</sup>,
+                                <br>
+                                <a target="_blank" href="https://scholar.google.com/citations?user=LfbCou8AAAAJ&hl=zh-CN&authuser=1">Hao&#160;Wang</a><sup>1</sup>,
+                                <a target="_blank" href="https://openreview.net/profile?id=~Wendi_Feng1">Wendi&#160;Feng</a><sup>1</sup>,
+                                <a target="_blank" href="https://zhizhou57.github.io/">Yesheng&#160;Liu</a><sup>5</sup>,
+                                <a target="_blank" href="https://adwardlee.github.io/">Lijun&#160;Li</a><sup>6</sup>,
+                                <a target="_blank" href="http://web.archive.org/web/20211021154403/https://www.microsoft.com/en-us/research/people/jinya/">Jin-Ge&#160;Yao</a><sup>7</sup>,
+                                <a target="_blank" href="https://shalei120.github.io/">Lei&#160;Sha</a><sup>1&#9993;</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Beihang University; </span>
+                            <span class="author-block"><sup>2</sup>Beijing Institute of Technology; </span>
+                            <span class="author-block"><sup>3</sup>Beijing University of Posts and Telecommunications; </span>
+                            <br>
+                            <span class="author-block"><sup>4</sup>Peking University; </span>
+                            <span class="author-block"><sup>5</sup>Institute of Automation, Chinese Academy of Sciences; </span>
+                            <br>
+                            <span class="author-block"><sup>6</sup>Shanghai Artificial Intelligence Laboratory; </span>
+                            <span class="author-block"><sup>7</sup>Beijing Academy of Artificial Intelligence; </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>*&#160;</sup>Equal contribution&#160;&#160;</span>
+                            <span class="author-block"><sup>&#9993;&#160;</sup>Corresponding author&#160;&#160;</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- TODO: arXiv link (paper not on arXiv yet) -->
+                                <!--
+                                <span class="link-block">
+                                    <a target="_blank" href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a target="_blank" href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>PDF</span>
+                                    </a>
+                                </span>
+                                -->
+
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/Anjingkun/SafeSteer/"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="is-size-4 publication-authors">
+                            <hr
+                                style=" width: 100%; height: 0.7px; background-color: rgba(0, 0, 0, 0.665);  margin-top: 1em; " />
+                            Localized Distillation, Zero Alignment Tax — with
+                            <strong>SafeSteer</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Highlights -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+
+                <h2>
+                    <div class="text-image-container title is-3" style="display:flex;flex-direction: row;align-items: center;">
+                        <div>
+                            <img src="assets/images/idea.png" alt="highlight" width="50">
+                        </div>
+                        <div class="text">
+                            <p>Highlights</p>
+                        </div>
+                    </div>
+                </h2>
+
+
+                <div class="content has-text-justified">
+                    <p>
+                    <ul>
+                        <li><b>
+                                <span style="color: #E4A902;">Localized On-Policy Distillation:</span>
+                                SafeSteer apply on-policy distillation to safety alignment and confine the reverse-KL penalty to a sparse safety-token subset, significantly mitigating the alignment tax.
+                            </b></li>
+                        <br>
+                        <li><b>
+                                <span style="color: #E4A902;">Activation-Steering Safety Teacher:</span>
+                                SafeSteer use activation steering to turn the student model itself into the safety teacher, removing the need for any external stronger model.
+                            </b></li>
+                        <br>
+                        <li><b>
+                                <span style="color: #E4A902;">Ultra Low-Cost Alignment:</span>
+                                With only 100 harmful samples, SafeSteer improves safety while preserving general capabilities, outperforming prior methods.
+                            </b></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Overall Performance -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+                <h2>
+                    <div class="text-image-container title is-3" style="display:flex;flex-direction: row;align-items: center; justify-content: center;">
+                        <div style="display:flex; align-items:center; justify-content:center; width:50px; height:50px;">
+                            <i class="fas fa-chart-line" style="font-size: 38px; color: #E4A902;"></i>
+                        </div>
+                        <div class="text">
+                            <p>Overall Performance</p>
+                        </div>
+                    </div>
+                </h2>
+                <div class="columns is-multiline is-centered is-vcentered">
+                    <div class="column is-half">
+                        <h3 class="subtitle is-5 has-text-centered" style="margin-bottom: 0.5em;"><b>Qwen3-4B-Instruct</b></h3>
+                        <figure class="image">
+                            <img src="assets/images/safesteer_fig_01.png" alt="SafeSteer on Qwen3-4B-Instruct">
+                        </figure>
+                    </div>
+                    <div class="column is-half">
+                        <h3 class="subtitle is-5 has-text-centered" style="margin-bottom: 0.5em;"><b>Qwen2.5-7B-Instruct</b></h3>
+                        <figure class="image">
+                            <img src="assets/images/image.png" alt="SafeSteer on Qwen2.5-7B-Instruct">
+                        </figure>
+                    </div>
+                </div>
+                <div class="content has-text-justified" style="margin-top: 1em;">
+                    <p>
+                        Safety&ndash;Capability Trade-off of <b>SafeSteer</b> on the <b>Qwen family</b>. Each point is a method, with the gray point marking the base model. Across both Qwen3-4B-Instruct and Qwen2.5-7B-Instruct, <b>SafeSteer</b> (red star, top-right) achieves the highest safety score while preserving general capability, dominating all baselines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- General Representation Shift -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop has-text-centered">
+                <h2>
+                    <div class="text-image-container title is-3" style="display:flex;flex-direction: row;align-items: center; justify-content: center;">
+                        <div>
+                            <img src="assets/images/scatter-graph.png" alt="representation shift" width="50">
+                        </div>
+                        <div class="text" style="margin-left: 0.2em;">
+                            <p>General Representation Shift</p>
+                        </div>
+                    </div>
+                </h2>
+                <div class="columns is-multiline is-centered">
+                    <div class="column is-half">
+                        <figure class="image">
+                            <img src="assets/images/llama3_2_3b_alpaca_L28_01.png" alt="Llama-3.2-3B representation shift">
+                            <figcaption style="text-align: center; padding-right: 13%;"><b>Llama-3.2-3B-Instruct</b></figcaption>
+                        </figure>
+                    </div>
+                    <div class="column is-half">
+                        <figure class="image">
+                            <img src="assets/images/llama3_8b_alpaca_L32_01.png" alt="Llama-3-8B representation shift">
+                            <figcaption style="text-align: center; padding-right: 13%;"><b>Llama-3-8B-Instruct</b></figcaption>
+                        </figure>
+                    </div>
+                    <div class="column is-half">
+                        <figure class="image">
+                            <img src="assets/images/qwen3_4b_alpaca_L36_01.png" alt="Qwen3-4B representation shift">
+                            <figcaption style="text-align: center; padding-right: 13%;"><b>Qwen3-4B-Instruct</b></figcaption>
+                        </figure>
+                    </div>
+                    <div class="column is-half">
+                        <figure class="image">
+                            <img src="assets/images/qwen2_5_7b_alpaca_L28_01.png" alt="Qwen2.5-7B representation shift">
+                            <figcaption style="text-align: center; padding-right: 13%;"><b>Qwen2.5-7B-Instruct</b></figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="content has-text-justified" style="margin-top: 1em;">
+                    <p>
+                        Although activation steering induces a severe representation shift in the safety teacher &pi;<sub>t</sub>, the student &pi;<sub>s</sub> trained by <b>SafeSteer</b> remains virtually identical to the base model &pi;<sub>0</sub> in the general-capability space &mdash; the two distributions overlap almost entirely, and the marginal densities along both axes coincide. This confirms that <b>SafeSteer</b> segregates safety adaptations from the general capability space, achieving safety alignment without incurring the alignment tax.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Motivation -->
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Motivation</h2>
+
+                    <!-- TODO: add motivation figures here later -->
+
+                    <div class="content has-text-justified">
+                        <p>
+                            <b><span style="color: #209CEF;">1. Alignment Tax:</span></b> <b>Mainstream safety alignment degrades general capabilities, known as the alignment tax. Existing methods force a global trade-off, relying on massive general-purpose data, orthogonal projection, or auxiliary reward models.</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">2. Sparse Safety Features:</span></b> <b>Because safety features are inherently sparse within the output distribution, alignment demands localized modifications rather than global trade-offs to mitigate forgetting.</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">3. Limitations of Standard OPD:</span></b> <b>Standard On-Policy Distillation (OPD) typically necessitates an external stronger teacher or heavily relies on the model's in-context learning. Furthermore, it applies a penalty to the entire vocabulary, which inevitably damages general capability tokens.</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">4. Proposing SafeSteer:</span></b> <b>Therefore, we propose <b>SafeSteer</b>, a lightweight framework that constructs an activation-steered safety teacher and utilizes safety token selection. By updating only the sparse safety subset, it achieves efficient alignment using merely 100 samples.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Aligning Large Language Models (LLMs) with human values often degrades their general capabilities, termed the alignment tax. Existing methods mitigate this by balancing dual objectives, which heavily rely on massive general-purpose data or auxiliary reward models.
+                        </p>
+                        <p>
+                            In this paper, we argue that, because safety features are inherently sparse within the output distribution, alignment requires localized modifications rather than global trade-offs. To this end, we propose <b>SafeSteer</b>, which performs on-policy distillation confined to safety tokens. First, we construct a safety teacher via activation steering. Based on this teacher, we develop a safety token selection algorithm. Consequently, <b>SafeSteer</b> restricts the reverse KL penalty to these tokens during training to preserve general capabilities.
+                        </p>
+                        <p>
+                            Experimental results across diverse models show that our <b>SafeSteer</b> achieves a superior trade-off between safety and general capability compared with existing methods, attaining strong safety performance on seven safety benchmarks with only minimal degradation on five general capability benchmarks. Notably, <b>SafeSteer</b> requires only 100 harmful samples without using any general-purpose data, less than 1% of what previous baselines used, considerably reducing alignment cost.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+
+    <!-- Method Overview -->
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Method Overview</h2>
+                    <img src="assets/images/pipeline.png" class="interpolation-image" alt="SafeSteer pipeline"
+                        style="display: block; margin-left: auto; margin-right: auto; max-width: 100%;" />
+                    <div class="content has-text-justified">
+                        <p>
+                            <b>Overview of SafeSteer.</b> The framework has three stages:
+                            <b><span style="color: #E4A902;">(1) Safety Teacher Construction</span></b> &mdash; extract a refusal direction via comparing the model's hidden representations and inject it into the residual stream of the base model &pi;<sub>0</sub> to build a stable safety teacher &pi;<sub>t</sub>;
+                            <b><span style="color: #E4A902;">(2) Safety Token Selection</span></b> &mdash; on harmless instructions paired with refusal responses from &pi;<sub>t</sub>, contrast the per-position output distributions of &pi;<sub>0</sub> and &pi;<sub>t</sub> via contrastive log probability, then use a voting-based aggregation algorithm to identify the safety-token subset <i>S</i> that is most sensitive to the refusal direction;
+                            <b><span style="color: #E4A902;">(3) Localized Reverse KL</span></b> &mdash; during on-policy distillation, minimize D<sub>KL</sub>(&pi;<sub>s</sub> &#8214; &pi;<sub>t</sub>) only on tokens in <i>S</i>, leaving general-capability tokens outside <i>S</i> unconstrained.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experimental Findings -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="is-centered has-text-centered">
+                <div class="is-four-fifths">
+                    <h2 class="title is-3">Experimental Findings</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            <b><span style="color: #209CEF;">1. Substantial Safety Improvements with Marginal Alignment Tax:</span></b> <b>SafeSteer attains the lowest Attack Success Rate (ASR) among all methods on the Qwen family by a clear margin and remains highly competitive on the Llama family. In contrast, other baselines either exhibit a significant degradation in general capabilities (e.g., W-DOOR collapses both Llama models to near half of their base capability) or fail to solve the alignment tax via naive data mixing (e.g., DPO-Mix increases ASR).</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">2. Preservation of General Capabilities without General-Purpose Data:</span></b> <b>Without relying on any general-purpose data necessitated by other methods, SafeSteer preserves general capabilities with negligible loss, successfully decoupling the safety feature from the general capability space.</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">3. Robustness of the Activation-Steered Teacher:</span></b> <b>Unlike prompt-driven approaches that struggle to maintain stable refusal behaviors, the activation-steered teacher induces refusal behaviors directly within the model's representation space. This provides robust refusal signals that consistently reduce the ASR to near 0.00%.</b>
+                        </p>
+                        <p>
+                            <b><span style="color: #209CEF;">4. Superiority of Localized Reverse KL Penalty:</span></b> <b>Applying the penalty across the entire vocabulary negatively impacts general capabilities, noticeably degrading performance on tasks like MATH and HumanEval. Furthermore, the reverse KL formulation outperforms forward KL, confirming that the mode-seeking property of reverse KL better suits learning explicit refusal behaviors.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>TODO: BibTeX entry coming soon.</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer.
+                            <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
